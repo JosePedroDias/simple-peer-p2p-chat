@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<title>initiator - simple-peer p2p chat</title>
+
+		<link rel="stylesheet" type="text/css" href="main.css">
+	</head>
+
+	<body>
+		<h1>p2p chat - initiator</h1>
+
+		<button onclick="p.signal( JSON.parse( prompt('paste signal here:', '') ) )">have signal</button>
+
+		<!-- <textarea id="signal"></textarea> -->
+
+		<div id="lines"></div>
+
+		<input id="line" value="" autofocus>
+
+		<script type="text/javascript" src="main.js"></script>
+		<script type="text/javascript">
+			var p = initiator();
+
+			line.addEventListener('keyup', function(ev) {
+				if (ev.keyCode === 13) {
+					p.send(line.value);
+					msg(hms() + ' > ' + line.value);
+					line.value = '';
+				}
+			});
+		</script>
+	</body>
+</html>
