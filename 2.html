@@ -17,6 +17,9 @@
 
 		<script type="text/javascript" src="main.js"></script>
 		<script type="text/javascript">
+			var lines = document.querySelector('#lines');
+			var line  = document.querySelector('#line');
+
 			var p = otherGuy( JSON.parse( prompt('paste signal here:', '') ) );
 
 			line.addEventListener('keyup', function(ev) {
